@@ -22,15 +22,29 @@ const HeroSection = () => {
             className="order-2 lg:order-1"
           >
             <p className="text-accent font-medium mb-4 tracking-widest text-sm uppercase">Hello, I'm</p>
-            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl text-primary mb-6 leading-[1.1]">
+            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl text-primary mb-4 leading-[1.1]">
               Sarah<br />
               <span className="text-forest-light">Rodriguez</span>
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-md mb-8 leading-relaxed font-light">
-              Computer Science student crafting thoughtful digital experiences. 
-              Passionate about design systems, accessibility, and the spaces where 
-              technology meets human creativity.
+            <p className="text-lg font-medium text-primary/80 mb-3">
+              Software Engineer · Full Stack Developer
             </p>
+            <p className="text-base md:text-lg text-muted-foreground max-w-md mb-6 leading-relaxed">
+              CS student building polished web experiences with React, TypeScript, and Node.js. 
+              Passionate about accessible design and clean code.
+            </p>
+            
+            {/* Quick Skills */}
+            <div className="flex flex-wrap gap-2 mb-8">
+              {["React", "TypeScript", "Node.js", "Figma"].map((skill) => (
+                <span 
+                  key={skill}
+                  className="px-3 py-1 text-xs font-medium bg-sage-light text-primary rounded-full"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
 
             <div className="flex flex-wrap gap-4 mb-10">
               <Link
