@@ -54,7 +54,7 @@ const ContactPage = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <div className="bg-card rounded-2xl p-8 border border-border/50 h-full shadow-soft">
+              <div className="bg-card rounded-lg p-10 border border-border/50 h-full shadow-soft">
                 <h2 className="font-display text-2xl font-semibold text-primary mb-6">
                   Contact Information
                 </h2>
@@ -62,7 +62,7 @@ const ContactPage = () => {
                 <div className="space-y-6 mb-8">
                   <div className="flex items-start gap-4">
                     <div className="p-3 bg-sage-light rounded-full">
-                      <Mail size={20} className="text-forest" />
+                      <Mail size={20} className="text-foreground" />
                     </div>
                     <div>
                       <p className="text-sm text-muted-foreground mb-1">
@@ -79,7 +79,7 @@ const ContactPage = () => {
 
                   <div className="flex items-start gap-4">
                     <div className="p-3 bg-sage-light rounded-full">
-                      <MapPin size={20} className="text-forest" />
+                      <MapPin size={20} className="text-foreground" />
                     </div>
                     <div>
                       <p className="text-sm text-muted-foreground mb-1">
@@ -108,7 +108,7 @@ const ContactPage = () => {
                         href={social.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-3 bg-sage-light rounded-full text-forest hover:bg-accent hover:text-accent-foreground transition-colors"
+                        className="p-3 bg-sage-light rounded-full text-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
                         aria-label={social.label}
                       >
                         <social.icon size={20} />
@@ -127,7 +127,7 @@ const ContactPage = () => {
             >
               <form
                 onSubmit={handleSubmit}
-                className="bg-card rounded-2xl p-8 border border-border/50 shadow-soft"
+                className="bg-card rounded-lg p-10 border border-border/50 shadow-soft"
               >
                 <div className="space-y-6">
                   <div>

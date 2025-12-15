@@ -45,7 +45,7 @@ const Navigation = () => {
           <li>
             <Link
               to="/contact"
-              className="px-5 py-2.5 text-sm font-medium bg-primary text-primary-foreground rounded-full transition-colors-smooth btn-press hover:bg-forest-light"
+              className="px-5 py-2.5 text-sm font-medium bg-primary text-primary-foreground rounded-lg transition-colors-smooth btn-press hover:bg-forest-light"
             >
               Say Hello
             </Link>
@@ -91,7 +91,7 @@ const Navigation = () => {
                 <Link
                   to="/contact"
                   onClick={() => setIsOpen(false)}
-                  className="inline-block px-6 py-3 text-sm font-medium bg-primary text-primary-foreground rounded-full"
+                  className="inline-block px-6 py-3 text-sm font-medium bg-primary text-primary-foreground rounded-lg"
                 >
                   Say Hello
                 </Link>

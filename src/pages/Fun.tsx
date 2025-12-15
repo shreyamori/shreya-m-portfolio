@@ -70,8 +70,8 @@ const FunPage = () => {
           />
 
           {/* Interests Grid */}
-          <section className="max-w-5xl mx-auto pb-16">
-            <div className="space-y-16">
+          <section className="max-w-5xl mx-auto pb-20">
+            <div className="space-y-20">
               {interests.map((interest, index) => (
                 <motion.div
                   key={interest.title}
@@ -83,11 +83,11 @@ const FunPage = () => {
                 >
                   {/* Image - alternates left/right */}
                   <div
-                    className={`relative overflow-hidden rounded-2xl ${
+                    className={`relative overflow-hidden rounded-lg ${
                       index % 2 === 0 ? "md:order-1" : "md:order-2"
                     }`}
                   >
-                    <div className="aspect-[4/3] overflow-hidden rounded-2xl">
+                    <div className="aspect-[4/3] overflow-hidden rounded-lg">
                       <img
                         src={interest.image}
                         alt={interest.caption}
@@ -109,7 +109,7 @@ const FunPage = () => {
                   >
                     <div className="flex items-center gap-3">
                       <div className="p-2 bg-sage-light rounded-full">
-                        <interest.icon size={20} className="text-forest" />
+                        <interest.icon size={20} className="text-foreground" />
                       </div>
                       <h2 className="font-display text-2xl font-semibold text-primary">
                         {interest.title}

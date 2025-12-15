@@ -21,7 +21,7 @@ const ExperiencePage = () => {
             description="Building impactful software at scale. 3 internships at top companies, creating tools that cut operational time by 80% and scale to thousands of users."
           />
 
-          <div className="max-w-4xl mx-auto space-y-8 pb-12">
+          <div className="max-w-4xl mx-auto space-y-12 pb-16">
             {experiences.map((experience, index) => (
               <ExperienceCard
                 key={experience.company + experience.period}

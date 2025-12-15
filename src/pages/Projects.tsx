@@ -25,7 +25,7 @@ const ProjectsPage = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="grid md:grid-cols-2 gap-6 pb-12"
+            className="grid md:grid-cols-2 gap-8 pb-16"
           >
             {projects.map((project) => (
               <ProjectCard key={project.title} {...project} />

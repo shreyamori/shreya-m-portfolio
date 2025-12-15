@@ -67,13 +67,13 @@ const HeroSection = () => {
             <div className="flex flex-wrap gap-4 mb-10">
               <Link
                 to="/projects"
-                className="px-8 py-3.5 bg-primary text-primary-foreground rounded-full font-medium transition-all duration-300 ease-out btn-press hover:bg-forest-light hover:shadow-lg"
+                className="px-8 py-3.5 bg-primary text-primary-foreground rounded-lg font-medium transition-all duration-300 ease-out btn-press hover:bg-forest-light hover:shadow-lg"
               >
                 View My Work
               </Link>
               <Link
                 to="/experience"
-                className="px-8 py-3.5 border-2 border-primary text-primary rounded-full font-medium transition-all duration-300 ease-out btn-press hover:bg-primary hover:text-primary-foreground"
+                className="px-8 py-3.5 border-2 border-primary text-primary rounded-lg font-medium transition-all duration-300 ease-out btn-press hover:bg-primary hover:text-primary-foreground"
               >
                 My Experience
               </Link>

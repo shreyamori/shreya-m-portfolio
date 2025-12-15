@@ -50,13 +50,13 @@ const ExperienceCard = ({
         </div>
 
         {/* Card */}
-        <div className="flex-1 bg-card rounded-2xl p-6 md:p-8 border border-border/50 hover-lift">
+        <div className="flex-1 bg-card rounded-lg p-8 md:p-10 border border-border/50 hover-lift">
           <div className="flex flex-wrap items-start justify-between gap-4 mb-4">
             <div>
-              <p className="text-forest-light font-semibold text-base mb-1">
+              <p className="text-muted-foreground font-medium text-base mb-1">
                 {company}
               </p>
-              <h3 className="font-display text-xl md:text-2xl font-semibold text-primary">
+              <h3 className="font-display text-xl md:text-2xl text-primary">
                 {title}
               </h3>
             </div>
@@ -90,7 +90,7 @@ const ExperienceCard = ({
                         return (
                           <strong
                             key={idx}
-                            className="font-semibold text-primary"
+                            className="font-medium text-primary"
                           >
                             {part}
                           </strong>

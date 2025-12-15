@@ -21,7 +21,7 @@ const BlogPage = () => {
             description="Thoughts on technology, design, career, and the journey of becoming a better engineer."
           />
 
-          <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-6 pb-12">
+          <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8 pb-16">
             {posts.map((post, index) => (
               <BlogCard key={post.slug} {...post} index={index} />
             ))}

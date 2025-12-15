@@ -21,7 +21,7 @@ const ExtracurricularsPage = () => {
             description="The communities, competitions, and causes that fuel my growth and give back to others."
           />
 
-          <div className="max-w-5xl mx-auto pb-12 space-y-16">
+          <div className="max-w-5xl mx-auto pb-16 space-y-20">
             {involvements.map((section, sectionIndex) => (
               <motion.div
                 key={section.category}
@@ -35,7 +35,7 @@ const ExtracurricularsPage = () => {
                     width="32"
                     height="16"
                     viewBox="0 0 32 16"
-                    className="text-sage"
+                    className="text-muted-foreground/30"
                   >
                     <ellipse
                       cx="8"
@@ -66,7 +66,7 @@ const ExtracurricularsPage = () => {
                   {section.category}
                 </h2>
 
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="grid md:grid-cols-2 gap-8">
                   {section.items.map((item, index) => (
                     <motion.div
                       key={item.title + item.organization}
@@ -74,7 +74,7 @@ const ExtracurricularsPage = () => {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.4, delay: index * 0.1 }}
-                      className={`group bg-card rounded-2xl p-6 border hover-lift ${
+                      className={`group bg-card rounded-lg p-8 border hover-lift ${
                         item.highlight
                           ? "border-accent/50 bg-gradient-to-br from-card to-gold-muted/10"
                           : "border-border/50"
@@ -90,7 +90,7 @@ const ExtracurricularsPage = () => {
                         >
                           <item.icon
                             size={20}
-                            className={item.highlight ? "" : "text-forest"}
+                            className={item.highlight ? "" : "text-foreground"}
                           />
                         </div>
                         <div className="flex-1">
@@ -110,7 +110,7 @@ const ExtracurricularsPage = () => {
                               </a>
                             )}
                           </div>
-                          <p className="text-forest-light font-medium text-sm mb-1">
+                          <p className="text-muted-foreground font-medium text-sm mb-1">
                             {item.organization}
                           </p>
                           <p className="text-xs text-muted-foreground mb-3">

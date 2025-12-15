@@ -34,7 +34,7 @@ const BlogCard = ({
       className={`group ${featured ? "md:col-span-2" : ""}`}
     >
       <Link to={`/blog/${slug}`} className="block">
-        <div className={`bg-card rounded-2xl overflow-hidden border border-border/50 hover-lift ${
+        <div className={`bg-card rounded-lg overflow-hidden border border-border/50 hover-lift ${
           featured ? "md:flex" : ""
         }`}>
           {/* Image */}
@@ -48,20 +48,20 @@ const BlogCard = ({
           </div>
 
           {/* Content */}
-          <div className={`p-6 ${featured ? "md:w-1/2 md:p-8 md:flex md:flex-col md:justify-center" : ""}`}>
+          <div className={`p-8 ${featured ? "md:w-1/2 md:p-10 md:flex md:flex-col md:justify-center" : ""}`}>
             {/* Tags */}
             <div className="flex flex-wrap gap-2 mb-3">
               {tags.map((tag) => (
                 <span
                   key={tag}
-                  className="px-3 py-1 text-xs font-medium bg-sage-light text-forest rounded-full"
+                  className="px-3 py-1 text-xs font-medium bg-sage-light text-foreground rounded-full"
                 >
                   {tag}
                 </span>
               ))}
             </div>
 
-            <h3 className={`font-display font-semibold text-primary mb-2 group-hover:text-forest-light transition-colors ${
+            <h3 className={`font-display font-semibold text-primary mb-2 group-hover:text-primary/80 transition-colors ${
               featured ? "text-2xl md:text-3xl" : "text-xl"
             }`}>
               {title}

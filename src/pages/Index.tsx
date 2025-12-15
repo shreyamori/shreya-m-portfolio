@@ -60,7 +60,7 @@ const Index = () => {
         <BotanicalDivider variant="leaves" />
 
         {/* Highlights Section */}
-        <section className="py-20 bg-cozy relative overflow-hidden">
+        <section className="py-24 bg-cozy relative overflow-hidden">
           <FloralAccent position="top-right" size="lg" />
           <FloralAccent position="bottom-left" size="md" />
 
@@ -84,7 +84,7 @@ const Index = () => {
               </p>
             </motion.div>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {highlights.map((highlight, index) => (
                 <HighlightCard
                   key={highlight.title}
@@ -99,7 +99,7 @@ const Index = () => {
         <BotanicalDivider variant="minimal" />
 
         {/* Value Proposition */}
-        <section className="py-16 relative">
+        <section className="py-20 relative">
           <div className="container mx-auto px-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -112,36 +112,36 @@ const Index = () => {
                 Why Work With Me?
               </h3>
               <div className="grid sm:grid-cols-3 gap-6 text-sm">
-                <div className="p-5 bg-card rounded-xl border border-border/50">
-                  <p className="font-semibold text-primary mb-2 text-base">
+                <div className="p-6 bg-card rounded-lg border border-border/50">
+                  <p className="font-medium text-primary mb-2 text-base">
                     Impact-Driven
                   </p>
                   <p className="text-muted-foreground mb-2">
                     Built tools that cut operational time by
                   </p>
-                  <p className="text-2xl font-bold text-accent mb-1">80%</p>
+                  <p className="text-2xl font-semibold text-accent mb-1">80%</p>
                   <p className="text-xs text-muted-foreground">
                     scales to 4,500+ users
                   </p>
                 </div>
-                <div className="p-5 bg-card rounded-xl border border-border/50">
-                  <p className="font-semibold text-primary mb-2 text-base">
+                <div className="p-6 bg-card rounded-lg border border-border/50">
+                  <p className="font-medium text-primary mb-2 text-base">
                     Full-Stack
                   </p>
                   <p className="text-muted-foreground mb-2">
                     React, Java, Python, AI/ML
                   </p>
-                  <p className="text-2xl font-bold text-accent mb-1">5+</p>
+                  <p className="text-2xl font-semibold text-accent mb-1">5+</p>
                   <p className="text-xs text-muted-foreground">
                     technologies mastered
                   </p>
                 </div>
-                <div className="p-5 bg-card rounded-xl border border-border/50">
-                  <p className="font-semibold text-primary mb-2 text-base">
+                <div className="p-6 bg-card rounded-lg border border-border/50">
+                  <p className="font-medium text-primary mb-2 text-base">
                     Collaborative
                   </p>
                   <p className="text-muted-foreground mb-2">Worked with</p>
-                  <p className="text-2xl font-bold text-accent mb-1">25+</p>
+                  <p className="text-2xl font-semibold text-accent mb-1">25+</p>
                   <p className="text-xs text-muted-foreground">
                     stakeholders across teams
                   </p>

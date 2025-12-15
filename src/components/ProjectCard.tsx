@@ -26,7 +26,7 @@ const ProjectCard = ({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.5 }}
-      className={`group relative bg-card rounded-2xl overflow-hidden border border-border/50 hover-lift img-hover-zoom ${
+      className={`group relative bg-card rounded-lg overflow-hidden border border-border/50 hover-lift img-hover-zoom ${
         featured ? "lg:col-span-2" : ""
       }`}
     >
@@ -68,7 +68,7 @@ const ProjectCard = ({
 
       {/* Content */}
       <div className="p-6">
-        <h3 className="font-display text-xl text-primary mb-2 transition-colors-smooth group-hover:text-forest-light">
+        <h3 className="font-display text-xl text-primary mb-2 transition-colors-smooth group-hover:text-primary/80">
           {title}
         </h3>
         <p className="text-muted-foreground text-sm mb-4 line-clamp-3 font-light leading-relaxed">
@@ -80,7 +80,7 @@ const ProjectCard = ({
           {tags.map((tag) => (
             <span
               key={tag}
-              className="px-3 py-1 text-xs font-medium bg-sage-light text-forest rounded-full"
+              className="px-3 py-1 text-xs font-medium bg-sage-light text-foreground rounded-full"
             >
               {tag}
             </span>
