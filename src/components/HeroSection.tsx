@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-image.jpg";
 
 const HeroSection = () => {
@@ -33,18 +34,18 @@ const HeroSection = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4 mb-10">
-              <a
-                href="#projects"
+              <Link
+                to="/projects"
                 className="px-8 py-3 bg-primary text-primary-foreground rounded-full font-medium hover:bg-forest-light transition-all duration-300 hover:shadow-lg"
               >
                 View My Work
-              </a>
-              <a
-                href="#about"
+              </Link>
+              <Link
+                to="/experience"
                 className="px-8 py-3 border-2 border-primary text-primary rounded-full font-medium hover:bg-primary hover:text-primary-foreground transition-all duration-300"
               >
-                About Me
-              </a>
+                My Experience
+              </Link>
             </div>
 
             {/* Social Links */}
