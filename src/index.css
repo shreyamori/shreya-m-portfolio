@@ -1,11 +1,3 @@
-@import '@fontsource/cormorant-garamond/400.css';
-@import '@fontsource/cormorant-garamond/500.css';
-@import '@fontsource/cormorant-garamond/600.css';
-@import '@fontsource/cormorant-garamond/700.css';
-@import '@fontsource/dm-sans/400.css';
-@import '@fontsource/dm-sans/500.css';
-@import '@fontsource/dm-sans/600.css';
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -100,10 +92,31 @@
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "kern" 1, "liga" 1;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-display;
+    @apply font-display font-bold tracking-tight;
+    text-wrap: balance;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl leading-tight;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl leading-tight;
+  }
+
+  h3 {
+    @apply text-xl md:text-2xl;
+  }
+
+  p {
+    @apply leading-relaxed;
   }
 }
 
@@ -144,28 +157,90 @@
   .shadow-soft {
     box-shadow: 0 4px 20px -4px rgba(30, 50, 40, 0.08);
   }
+
+  /* Editorial link style */
+  .link-editorial {
+    @apply relative inline-block;
+  }
+
+  .link-editorial::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-full h-px bg-current opacity-30;
+    transform: scaleX(1);
+    transform-origin: left;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .link-editorial:hover::after {
+    @apply opacity-100;
+    transform: scaleX(0);
+    transform-origin: right;
+  }
 }
 
 @layer utilities {
+  /* Subtle hover lift */
   .hover-lift {
-    @apply transition-all duration-300;
+    @apply transition-all duration-300 ease-out;
   }
 
   .hover-lift:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 30px -8px rgba(30, 50, 40, 0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px -8px rgba(30, 50, 40, 0.12);
   }
 
+  /* Gentle scale on hover */
+  .hover-scale {
+    @apply transition-transform duration-300 ease-out;
+  }
+
+  .hover-scale:hover {
+    transform: scale(1.02);
+  }
+
+  /* Fade transition */
+  .transition-fade {
+    @apply transition-opacity duration-300 ease-out;
+  }
+
+  /* Smooth color transitions */
+  .transition-colors-smooth {
+    @apply transition-colors duration-300 ease-out;
+  }
+
+  /* Image hover zoom */
+  .img-hover-zoom {
+    @apply overflow-hidden;
+  }
+
+  .img-hover-zoom img {
+    @apply transition-transform duration-500 ease-out;
+  }
+
+  .img-hover-zoom:hover img {
+    transform: scale(1.05);
+  }
+
+  /* Underline hover animation */
   .underline-hover {
     @apply relative;
   }
 
   .underline-hover::after {
-    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300;
     content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300 ease-out;
   }
 
   .underline-hover:hover::after {
     @apply w-full;
+  }
+
+  /* Button press effect */
+  .btn-press {
+    @apply transition-transform duration-150 ease-out;
+  }
+
+  .btn-press:active {
+    transform: scale(0.98);
   }
 }
