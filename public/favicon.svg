@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 100">
   <defs>
     <style>
       .ssm-text {
         font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-        font-size: 52px;
+        font-size: 50px;
         font-weight: 600;
         fill: hsl(150 35% 22%);
       }
@@ -12,7 +12,6 @@
       }
     </style>
   </defs>
-  <text x="12" y="68" class="ssm-text">SSM</text>
-  <text x="68" y="68" class="ssm-text dot">.</text>
+  <text x="20" y="70" class="ssm-text">SSM<tspan class="dot">.</tspan></text>
 </svg>
 
