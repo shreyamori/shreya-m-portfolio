@@ -79,7 +79,10 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-      },
+        warm: {
+          white: "hsl(var(--warm-white))",
+        },
+        blush: "hsl(var(--blush))",
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",

@@ -59,16 +59,20 @@
     --cream-dark: 40 20% 90%;
     --sage: 150 20% 75%;
     --sage-light: 150 15% 88%;
+    --warm-white: 40 40% 98%;
+    --blush: 15 60% 92%;
 
     /* Gradients */
     --gradient-hero: linear-gradient(135deg, hsl(40 30% 96%) 0%, hsl(150 15% 92%) 100%);
     --gradient-card: linear-gradient(180deg, hsl(40 25% 98%) 0%, hsl(40 20% 95%) 100%);
     --gradient-accent: linear-gradient(135deg, hsl(43 85% 55%) 0%, hsl(43 85% 65%) 100%);
+    --gradient-warm: linear-gradient(180deg, hsl(40 40% 98%) 0%, hsl(40 30% 96%) 100%);
 
     /* Shadows */
     --shadow-soft: 0 4px 20px -4px hsl(150 20% 20% / 0.08);
     --shadow-card: 0 8px 30px -8px hsl(150 20% 20% / 0.1);
     --shadow-glow: 0 0 40px hsl(43 85% 55% / 0.15);
+    --shadow-warm: 0 4px 24px -6px hsl(40 30% 30% / 0.1);
 
     /* Transitions */
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -158,6 +162,23 @@
 
   .organic-border {
     border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  }
+
+  .petal-shape {
+    border-radius: 80% 20% 55% 45% / 55% 45% 55% 45%;
+  }
+
+  .leaf-shape {
+    border-radius: 5% 95% 10% 90% / 50% 50% 50% 50%;
+  }
+
+  /* Warm section backgrounds */
+  .bg-warm {
+    background: linear-gradient(180deg, hsl(var(--warm-white)) 0%, hsl(var(--cream)) 100%);
+  }
+
+  .bg-cozy {
+    background: linear-gradient(135deg, hsl(var(--cream)) 0%, hsl(var(--sage-light) / 0.3) 50%, hsl(var(--cream)) 100%);
   }
 }
 

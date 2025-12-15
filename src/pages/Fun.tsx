@@ -1,6 +1,8 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import PageHeader from "@/components/PageHeader";
+import BotanicalDivider from "@/components/BotanicalDivider";
+import FloralAccent from "@/components/FloralAccent";
 import { motion } from "framer-motion";
 import { Coffee, Camera, Music, Plane, BookOpen, Gamepad2, Leaf, Heart } from "lucide-react";
 
@@ -65,120 +67,132 @@ const photos = [
 
 const FunPage = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-cozy">
       <Navigation />
-      <main className="container mx-auto px-6">
-        <PageHeader
-          label="Personal"
-          title="Fun Stuff"
-          description="The hobbies, interests, and little things that make life colorful outside of code."
-        />
+      <main className="relative overflow-hidden">
+        <FloralAccent position="top-right" size="lg" />
+        <FloralAccent position="bottom-left" size="md" />
+        
+        <div className="container mx-auto px-6">
+          <PageHeader
+            label="Personal"
+            title="Fun Stuff"
+            description="The hobbies, interests, and little things that make life colorful outside of code."
+          />
 
-        {/* Interest Cards */}
-        <section className="max-w-5xl mx-auto mb-20">
-          <div className="grid sm:grid-cols-2 gap-6">
-            {interests.map((interest, index) => (
-              <motion.div
-                key={interest.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group bg-card rounded-2xl overflow-hidden border border-border/50 hover-lift"
-              >
-                <div className="relative h-48 overflow-hidden">
-                  <img
-                    src={interest.image}
-                    alt={interest.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-forest-dark/70 via-transparent to-transparent" />
-                  <div className="absolute bottom-4 left-4 flex items-center gap-2">
-                    <div className="p-2 bg-accent rounded-full">
-                      <interest.icon size={18} className="text-accent-foreground" />
+          {/* Interest Cards */}
+          <section className="max-w-5xl mx-auto mb-16">
+            <div className="grid sm:grid-cols-2 gap-6">
+              {interests.map((interest, index) => (
+                <motion.div
+                  key={interest.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="group bg-card rounded-2xl overflow-hidden border border-border/50 hover-lift"
+                >
+                  <div className="relative h-48 overflow-hidden">
+                    <img
+                      src={interest.image}
+                      alt={interest.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-forest-dark/70 via-transparent to-transparent" />
+                    <div className="absolute bottom-4 left-4 flex items-center gap-2">
+                      <div className="p-2 bg-accent rounded-full">
+                        <interest.icon size={18} className="text-accent-foreground" />
+                      </div>
+                      <h3 className="font-display text-xl font-semibold text-white">
+                        {interest.title}
+                      </h3>
                     </div>
-                    <h3 className="font-display text-xl font-semibold text-white">
-                      {interest.title}
-                    </h3>
                   </div>
-                </div>
-                <div className="p-5">
-                  <p className="text-muted-foreground">{interest.description}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </section>
+                  <div className="p-5">
+                    <p className="text-muted-foreground">{interest.description}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </section>
 
-        {/* Favorites Grid */}
-        <section className="max-w-5xl mx-auto mb-20">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="font-display text-2xl font-semibold text-primary mb-8 text-center"
-          >
-            A Few of My Favorite Things
-          </motion.h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {favorites.map((fav, index) => (
-              <motion.div
-                key={fav.category}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="bg-card rounded-2xl p-6 border border-border/50"
-              >
-                <div className="w-10 h-10 rounded-full bg-sage-light flex items-center justify-center mb-4">
-                  <fav.icon size={18} className="text-forest" />
-                </div>
-                <h3 className="font-display text-lg font-semibold text-primary mb-3">
-                  {fav.category}
-                </h3>
-                <ul className="space-y-2">
-                  {fav.items.map((item) => (
-                    <li key={item} className="text-sm text-muted-foreground flex items-start gap-2">
-                      <span className="w-1 h-1 rounded-full bg-accent mt-2 flex-shrink-0" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-            ))}
-          </div>
-        </section>
+          <BotanicalDivider variant="leaves" />
 
-        {/* Photo Grid */}
-        <section className="max-w-5xl mx-auto pb-24">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="font-display text-2xl font-semibold text-primary mb-8 text-center"
-          >
-            Through My Lens
-          </motion.h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            {photos.map((photo, index) => (
-              <motion.div
-                key={photo}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="relative aspect-square overflow-hidden rounded-xl group"
-              >
-                <img
-                  src={photo}
-                  alt={`Photo ${index + 1}`}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-forest-dark/0 group-hover:bg-forest-dark/20 transition-colors duration-300" />
-              </motion.div>
-            ))}
-          </div>
-        </section>
+          {/* Favorites Grid */}
+          <section className="max-w-5xl mx-auto mb-16">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="font-display text-2xl font-semibold text-primary mb-8 text-center"
+            >
+              A Few of My Favorite Things
+            </motion.h2>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {favorites.map((fav, index) => (
+                <motion.div
+                  key={fav.category}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  className="bg-card rounded-2xl p-6 border border-border/50"
+                >
+                  <div className="w-10 h-10 rounded-full bg-sage-light flex items-center justify-center mb-4">
+                    <fav.icon size={18} className="text-forest" />
+                  </div>
+                  <h3 className="font-display text-lg font-semibold text-primary mb-3">
+                    {fav.category}
+                  </h3>
+                  <ul className="space-y-2">
+                    {fav.items.map((item) => (
+                      <li key={item} className="text-sm text-muted-foreground flex items-start gap-2">
+                        <svg width="8" height="12" viewBox="0 0 8 12" className="text-gold mt-1 flex-shrink-0">
+                          <ellipse cx="4" cy="6" rx="3" ry="5" fill="currentColor" opacity="0.5" />
+                          <ellipse cx="4" cy="6" rx="1.5" ry="2.5" fill="currentColor" />
+                        </svg>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </motion.div>
+              ))}
+            </div>
+          </section>
+
+          <BotanicalDivider variant="minimal" />
+
+          {/* Photo Grid */}
+          <section className="max-w-5xl mx-auto pb-16">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="font-display text-2xl font-semibold text-primary mb-8 text-center"
+            >
+              Through My Lens
+            </motion.h2>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+              {photos.map((photo, index) => (
+                <motion.div
+                  key={photo}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  className="relative aspect-square overflow-hidden rounded-xl group"
+                >
+                  <img
+                    src={photo}
+                    alt={`Travel photo ${index + 1}`}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-forest-dark/0 group-hover:bg-forest-dark/20 transition-colors duration-300" />
+                </motion.div>
+              ))}
+            </div>
+          </section>
+        </div>
       </main>
       <Footer />
     </div>
