@@ -83,6 +83,7 @@ export default {
           white: "hsl(var(--warm-white))",
         },
         blush: "hsl(var(--blush))",
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
