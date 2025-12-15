@@ -1,4 +1,5 @@
 import { Heart } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -7,9 +8,9 @@ const Footer = () => {
     <footer className="py-8 bg-primary text-primary-foreground">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="font-display text-xl font-semibold">
+          <Link to="/" className="font-display text-xl font-semibold">
             SR<span className="text-gold">.</span>
-          </div>
+          </Link>
           
           <p className="text-sm text-primary-foreground/70 flex items-center gap-1">
             © {currentYear} Sarah Rodriguez. Made with 
@@ -18,15 +19,15 @@ const Footer = () => {
           </p>
           
           <nav className="flex items-center gap-6 text-sm">
-            <a href="#about" className="text-primary-foreground/70 hover:text-gold transition-colors">
-              About
-            </a>
-            <a href="#projects" className="text-primary-foreground/70 hover:text-gold transition-colors">
+            <Link to="/projects" className="text-primary-foreground/70 hover:text-gold transition-colors">
               Projects
-            </a>
-            <a href="#contact" className="text-primary-foreground/70 hover:text-gold transition-colors">
+            </Link>
+            <Link to="/blog" className="text-primary-foreground/70 hover:text-gold transition-colors">
+              Blog
+            </Link>
+            <Link to="/contact" className="text-primary-foreground/70 hover:text-gold transition-colors">
               Contact
-            </a>
+            </Link>
           </nav>
         </div>
       </div>
