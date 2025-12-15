@@ -86,24 +86,32 @@ const Index = () => {
 
         <BotanicalDivider variant="minimal" />
 
-        {/* Personal Note Section */}
-        <section className="py-20 relative">
+        {/* Value Proposition */}
+        <section className="py-16 relative">
           <div className="container mx-auto px-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="max-w-2xl mx-auto text-center"
+              className="max-w-3xl mx-auto text-center"
             >
-              <p className="font-display text-2xl md:text-3xl text-primary leading-relaxed italic">
-                "I believe the best technology feels invisible — it connects people, 
-                solves real problems, and leaves space for human creativity to flourish."
-              </p>
-              <div className="mt-6 flex items-center justify-center gap-3">
-                <span className="w-8 h-px bg-accent" />
-                <span className="text-sm text-muted-foreground">Sarah Rodriguez</span>
-                <span className="w-8 h-px bg-accent" />
+              <h3 className="font-display text-xl md:text-2xl text-primary mb-6">
+                Why Work With Me?
+              </h3>
+              <div className="grid sm:grid-cols-3 gap-6 text-sm">
+                <div className="p-4">
+                  <p className="font-semibold text-primary mb-1">Ship Fast</p>
+                  <p className="text-muted-foreground">Rapid prototyping with attention to detail</p>
+                </div>
+                <div className="p-4">
+                  <p className="font-semibold text-primary mb-1">User-First</p>
+                  <p className="text-muted-foreground">Accessibility and UX at the core</p>
+                </div>
+                <div className="p-4">
+                  <p className="font-semibold text-primary mb-1">Team Player</p>
+                  <p className="text-muted-foreground">Clear communication, collaborative spirit</p>
+                </div>
               </div>
             </motion.div>
           </div>
