@@ -2,6 +2,8 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import PageHeader from "@/components/PageHeader";
 import ExperienceCard from "@/components/ExperienceCard";
+import BotanicalDivider from "@/components/BotanicalDivider";
+import FloralAccent from "@/components/FloralAccent";
 
 const experiences = [
   {
@@ -60,19 +62,26 @@ const experiences = [
 
 const ExperiencePage = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-warm">
       <Navigation />
-      <main className="container mx-auto px-6">
-        <PageHeader
-          label="Career"
-          title="Work Experience"
-          description="Building products and learning from amazing teams across tech."
-        />
+      <main className="relative overflow-hidden">
+        <FloralAccent position="top-left" size="md" />
+        <FloralAccent position="bottom-right" size="lg" />
+        
+        <div className="container mx-auto px-6">
+          <PageHeader
+            label="Career"
+            title="Work Experience"
+            description="Building products and learning from amazing teams across tech."
+          />
 
-        <div className="max-w-4xl mx-auto space-y-8 pb-24">
-          {experiences.map((experience, index) => (
-            <ExperienceCard key={experience.company + experience.period} {...experience} index={index} />
-          ))}
+          <div className="max-w-4xl mx-auto space-y-8 pb-12">
+            {experiences.map((experience, index) => (
+              <ExperienceCard key={experience.company + experience.period} {...experience} index={index} />
+            ))}
+          </div>
+
+          <BotanicalDivider variant="minimal" className="pb-16" />
         </div>
       </main>
       <Footer />

@@ -2,6 +2,8 @@ import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
 import Footer from "@/components/Footer";
 import HighlightCard from "@/components/HighlightCard";
+import BotanicalDivider from "@/components/BotanicalDivider";
+import FloralAccent from "@/components/FloralAccent";
 import { Briefcase, Code2, Users, BookOpen, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -50,9 +52,14 @@ const Index = () => {
       <main>
         <HeroSection />
         
+        <BotanicalDivider variant="leaves" />
+        
         {/* Highlights Section */}
-        <section className="py-24 bg-secondary/30">
-          <div className="container mx-auto px-6">
+        <section className="py-20 bg-cozy relative overflow-hidden">
+          <FloralAccent position="top-right" size="lg" />
+          <FloralAccent position="bottom-left" size="md" />
+          
+          <div className="container mx-auto px-6 relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -74,6 +81,31 @@ const Index = () => {
                 <HighlightCard key={highlight.title} {...highlight} index={index} />
               ))}
             </div>
+          </div>
+        </section>
+
+        <BotanicalDivider variant="minimal" />
+
+        {/* Personal Note Section */}
+        <section className="py-20 relative">
+          <div className="container mx-auto px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="max-w-2xl mx-auto text-center"
+            >
+              <p className="font-display text-2xl md:text-3xl text-primary leading-relaxed italic">
+                "I believe the best technology feels invisible — it connects people, 
+                solves real problems, and leaves space for human creativity to flourish."
+              </p>
+              <div className="mt-6 flex items-center justify-center gap-3">
+                <span className="w-8 h-px bg-accent" />
+                <span className="text-sm text-muted-foreground">Sarah Rodriguez</span>
+                <span className="w-8 h-px bg-accent" />
+              </div>
+            </motion.div>
           </div>
         </section>
       </main>
