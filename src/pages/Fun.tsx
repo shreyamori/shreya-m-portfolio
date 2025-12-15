@@ -4,194 +4,127 @@ import PageHeader from "@/components/PageHeader";
 import BotanicalDivider from "@/components/BotanicalDivider";
 import FloralAccent from "@/components/FloralAccent";
 import { motion } from "framer-motion";
-import { Coffee, Camera, Music, Plane, BookOpen, Gamepad2, Leaf, Heart } from "lucide-react";
+import { Coffee, Camera, Plane, BookOpen, Activity } from "lucide-react";
 
 const interests = [
   {
-    title: "Coffee & Matcha",
-    description: "Always on the hunt for the perfect matcha latte. My current favorite: Andytown Coffee in SF.",
+    title: "Matcha & Cafes",
+    description:
+      "I love exploring different cafes, especially for a good matcha latte. There's something peaceful about finding the perfect spot to work or just take a break.",
     icon: Coffee,
-    image: "https://images.unsplash.com/photo-1536256263959-770b48d82b0a?w=400&h=300&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1536256263959-770b48d82b0a?w=600&h=400&fit=crop",
+    caption: "Always on the hunt for the perfect matcha",
   },
   {
-    title: "Travel Photography",
-    description: "Capturing moments from my adventures. Japan, Portugal, and Iceland are top of my list.",
+    title: "Photography",
+    description:
+      "Capturing moments, whether it's a quiet morning or a new place. Photography helps me notice the details I might otherwise miss.",
     icon: Camera,
-    image: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=400&h=300&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=600&h=400&fit=crop",
+    caption: "Finding beauty in everyday moments",
   },
   {
-    title: "Vinyl & Music",
-    description: "Building a small vinyl collection. Currently spinning: Japanese City Pop and 70s soul.",
-    icon: Music,
-    image: "https://images.unsplash.com/photo-1461360228754-6e81c478b882?w=400&h=300&fit=crop",
-  },
-  {
-    title: "Houseplants",
-    description: "17 plants and counting. My monstera and fiddle leaf fig are my pride and joy.",
-    icon: Leaf,
-    image: "https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?w=400&h=300&fit=crop",
-  },
-];
-
-const favorites = [
-  {
-    category: "Currently Reading",
-    items: ["'Tomorrow and Tomorrow and Tomorrow' by Gabrielle Zevin", "'The Design of Everyday Things' by Don Norman", "'Pachinko' by Min Jin Lee"],
-    icon: BookOpen,
-  },
-  {
-    category: "Favorite Games",
-    items: ["Stardew Valley", "Hollow Knight", "Zelda: Tears of the Kingdom"],
-    icon: Gamepad2,
-  },
-  {
-    category: "Dream Destinations",
-    items: ["New Zealand", "Patagonia", "Norwegian Fjords"],
+    title: "Travel",
+    description:
+      "Exploring new places, trying local food, and seeing how people live differently. Every trip teaches me something new.",
     icon: Plane,
+    image:
+      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=600&h=400&fit=crop",
+    caption: "Collecting experiences, not just photos",
   },
   {
-    category: "Simple Joys",
-    items: ["Farmers markets on Sunday mornings", "Rainy days with a good book", "Cooking for friends"],
-    icon: Heart,
+    title: "Pickleball",
+    description:
+      "A recent discovery that's become a favorite way to stay active and connect with friends. It's competitive but fun—the perfect balance.",
+    icon: Activity,
+    image:
+      "https://images.unsplash.com/photo-1511882150382-421056c89033?w=600&h=400&fit=crop",
+    caption: "Where competition meets community",
   },
-];
-
-const photos = [
-  "https://images.unsplash.com/photo-1528164344705-47542687000d?w=400&h=400&fit=crop",
-  "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=400&fit=crop",
-  "https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?w=400&h=400&fit=crop",
-  "https://images.unsplash.com/photo-1516685018646-549198525c1b?w=400&h=400&fit=crop",
-  "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=400&h=400&fit=crop",
-  "https://images.unsplash.com/photo-1474693220100-7adba88a62cc?w=400&h=400&fit=crop",
+  {
+    title: "Reading",
+    description:
+      "Books are my escape and my education. I read everything from technical deep-dives to fiction that makes me think differently.",
+    icon: BookOpen,
+    image:
+      "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=600&h=400&fit=crop",
+    caption: "Stories that stay with me long after",
+  },
 ];
 
 const FunPage = () => {
   return (
-    <div className="min-h-screen bg-cozy">
+    <div className="min-h-screen bg-background">
       <Navigation />
       <main className="relative overflow-hidden">
         <FloralAccent position="top-right" size="lg" />
         <FloralAccent position="bottom-left" size="md" />
-        
+
         <div className="container mx-auto px-6">
           <PageHeader
             label="Personal"
-            title="Fun Stuff"
-            description="The hobbies, interests, and little things that make life colorful outside of code."
+            title="Outside of Code"
+            description="A few things that keep me curious, grounded, and inspired."
           />
 
-          {/* Interest Cards */}
-          <section className="max-w-5xl mx-auto mb-16">
-            <div className="grid sm:grid-cols-2 gap-6">
+          {/* Interests Grid */}
+          <section className="max-w-5xl mx-auto pb-20">
+            <div className="space-y-20">
               {interests.map((interest, index) => (
                 <motion.div
                   key={interest.title}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="group bg-card rounded-2xl overflow-hidden border border-border/50 hover-lift"
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="grid md:grid-cols-2 gap-8 items-center"
                 >
-                  <div className="relative h-48 overflow-hidden">
-                    <img
-                      src={interest.image}
-                      alt={interest.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-forest-dark/70 via-transparent to-transparent" />
-                    <div className="absolute bottom-4 left-4 flex items-center gap-2">
-                      <div className="p-2 bg-accent rounded-full">
-                        <interest.icon size={18} className="text-accent-foreground" />
-                      </div>
-                      <h3 className="font-display text-xl font-semibold text-white">
-                        {interest.title}
-                      </h3>
+                  {/* Image - alternates left/right */}
+                  <div
+                    className={`relative overflow-hidden rounded-lg ${
+                      index % 2 === 0 ? "md:order-1" : "md:order-2"
+                    }`}
+                  >
+                    <div className="aspect-[4/3] overflow-hidden rounded-lg">
+                      <img
+                        src={interest.image}
+                        alt={interest.caption}
+                        className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                      />
+                    </div>
+                    <div className="absolute bottom-4 left-4 right-4">
+                      <p className="text-sm text-white/90 font-medium drop-shadow-lg">
+                        {interest.caption}
+                      </p>
                     </div>
                   </div>
-                  <div className="p-5">
-                    <p className="text-muted-foreground">{interest.description}</p>
+
+                  {/* Content */}
+                  <div
+                    className={`space-y-4 ${
+                      index % 2 === 0 ? "md:order-2" : "md:order-1"
+                    }`}
+                  >
+                    <div className="flex items-center gap-3">
+                      <div className="p-2 bg-sage-light rounded-full">
+                        <interest.icon size={20} className="text-foreground" />
+                      </div>
+                      <h2 className="font-display text-2xl font-semibold text-primary">
+                        {interest.title}
+                      </h2>
+                    </div>
+                    <p className="text-muted-foreground leading-relaxed text-base">
+                      {interest.description}
+                    </p>
                   </div>
                 </motion.div>
               ))}
             </div>
           </section>
 
-          <BotanicalDivider variant="leaves" />
-
-          {/* Favorites Grid */}
-          <section className="max-w-5xl mx-auto mb-16">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="font-display text-2xl font-semibold text-primary mb-8 text-center"
-            >
-              A Few of My Favorite Things
-            </motion.h2>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {favorites.map((fav, index) => (
-                <motion.div
-                  key={fav.category}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
-                  className="bg-card rounded-2xl p-6 border border-border/50"
-                >
-                  <div className="w-10 h-10 rounded-full bg-sage-light flex items-center justify-center mb-4">
-                    <fav.icon size={18} className="text-forest" />
-                  </div>
-                  <h3 className="font-display text-lg font-semibold text-primary mb-3">
-                    {fav.category}
-                  </h3>
-                  <ul className="space-y-2">
-                    {fav.items.map((item) => (
-                      <li key={item} className="text-sm text-muted-foreground flex items-start gap-2">
-                        <svg width="8" height="12" viewBox="0 0 8 12" className="text-gold mt-1 flex-shrink-0">
-                          <ellipse cx="4" cy="6" rx="3" ry="5" fill="currentColor" opacity="0.5" />
-                          <ellipse cx="4" cy="6" rx="1.5" ry="2.5" fill="currentColor" />
-                        </svg>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </motion.div>
-              ))}
-            </div>
-          </section>
-
-          <BotanicalDivider variant="minimal" />
-
-          {/* Photo Grid */}
-          <section className="max-w-5xl mx-auto pb-16">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="font-display text-2xl font-semibold text-primary mb-8 text-center"
-            >
-              Through My Lens
-            </motion.h2>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-              {photos.map((photo, index) => (
-                <motion.div
-                  key={photo}
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
-                  className="relative aspect-square overflow-hidden rounded-xl group"
-                >
-                  <img
-                    src={photo}
-                    alt={`Travel photo ${index + 1}`}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-forest-dark/0 group-hover:bg-forest-dark/20 transition-colors duration-300" />
-                </motion.div>
-              ))}
-            </div>
-          </section>
+          <BotanicalDivider variant="leaves" className="pb-16" />
         </div>
       </main>
       <Footer />

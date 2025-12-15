@@ -2,7 +2,12 @@ import type { Config } from "tailwindcss";
 
 export default {
   darkMode: ["class"],
-  content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
+  content: [
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   prefix: "",
   theme: {
     container: {
@@ -14,8 +19,36 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
-        display: ["Libre Baskerville", "Georgia", "serif"],
+        sans: [
+          "Inter",
+          "system-ui",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "Segoe UI",
+          "Roboto",
+          "sans-serif",
+        ],
+        display: [
+          "Space Grotesk",
+          "system-ui",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "sans-serif",
+        ],
+      },
+      fontWeight: {
+        light: "300",
+        normal: "400",
+        medium: "500",
+        semibold: "600",
+        bold: "700",
+      },
+      lineHeight: {
+        tight: "1.2",
+        snug: "1.375",
+        normal: "1.5",
+        relaxed: "1.625",
+        loose: "2",
       },
       colors: {
         border: "hsl(var(--border))",
@@ -68,6 +101,10 @@ export default {
         sage: {
           DEFAULT: "hsl(var(--sage))",
           light: "hsl(var(--sage-light))",
+        },
+        neutral: {
+          light: "hsl(0 0% 96%)",
+          DEFAULT: "hsl(0 0% 92%)",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",

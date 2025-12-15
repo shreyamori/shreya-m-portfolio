@@ -32,13 +32,17 @@ const ExperienceCard = ({
     >
       {/* Timeline connector */}
       <div className="absolute left-8 top-0 bottom-0 w-px bg-border hidden md:block" />
-      
+
       <div className="flex gap-6">
         {/* Timeline dot */}
         <div className="hidden md:flex flex-col items-center">
           <div className="w-16 h-16 rounded-full bg-sage-light border-4 border-background flex items-center justify-center overflow-hidden z-10">
             {logo ? (
-              <img src={logo} alt={company} className="w-10 h-10 object-contain" />
+              <img
+                src={logo}
+                alt={company}
+                className="w-10 h-10 object-contain"
+              />
             ) : (
               <Building2 className="w-6 h-6 text-forest" />
             )}
@@ -46,13 +50,15 @@ const ExperienceCard = ({
         </div>
 
         {/* Card */}
-        <div className="flex-1 bg-card rounded-2xl p-6 md:p-8 border border-border/50 hover-lift">
+        <div className="flex-1 bg-card rounded-lg p-8 md:p-10 border border-border/50 hover-lift">
           <div className="flex flex-wrap items-start justify-between gap-4 mb-4">
             <div>
-              <h3 className="font-display text-xl md:text-2xl font-semibold text-primary">
+              <p className="text-muted-foreground font-medium text-base mb-1">
+                {company}
+              </p>
+              <h3 className="font-display text-xl md:text-2xl text-primary">
                 {title}
               </h3>
-              <p className="text-forest-light font-medium">{company}</p>
             </div>
             <div className="flex flex-col items-end gap-1 text-sm text-muted-foreground">
               <span className="flex items-center gap-1">
@@ -68,13 +74,34 @@ const ExperienceCard = ({
 
           <p className="text-muted-foreground mb-4">{description}</p>
 
-          <ul className="space-y-2">
-            {achievements.map((achievement, i) => (
-              <li key={i} className="flex items-start gap-2 text-sm text-foreground">
-                <span className="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0" />
-                {achievement}
-              </li>
-            ))}
+          <ul className="space-y-2.5">
+            {achievements.map((achievement, i) => {
+              // Extract and bold numbers/percentages for quick scanning
+              const parts = achievement.split(/(\d+%|\d+\+|\d+,\d+\+|\d+)/g);
+              return (
+                <li
+                  key={i}
+                  className="flex items-start gap-2.5 text-sm text-foreground"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0" />
+                  <span>
+                    {parts.map((part, idx) => {
+                      if (/^\d+%|\d+\+|\d+,\d+\+|\d+$/.test(part)) {
+                        return (
+                          <strong
+                            key={idx}
+                            className="font-medium text-primary"
+                          >
+                            {part}
+                          </strong>
+                        );
+                      }
+                      return <span key={idx}>{part}</span>;
+                    })}
+                  </span>
+                </li>
+              );
+            })}
           </ul>
         </div>
       </div>

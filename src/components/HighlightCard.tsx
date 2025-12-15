@@ -28,13 +28,13 @@ const HighlightCard = ({
     >
       <Link
         to={link}
-        className="group block bg-card rounded-2xl p-6 border border-border/50 hover-lift h-full"
+        className="group block bg-card rounded-lg p-8 border border-border/50 hover-lift h-full"
       >
         <div className="w-12 h-12 rounded-full bg-sage-light flex items-center justify-center mb-4 transition-colors-smooth group-hover:bg-accent">
-          <Icon className="w-5 h-5 text-forest transition-colors-smooth group-hover:text-accent-foreground" />
+          <Icon className="w-5 h-5 text-foreground transition-colors-smooth group-hover:text-accent-foreground" />
         </div>
         
-        <h3 className="font-display text-xl text-primary mb-2 transition-colors-smooth group-hover:text-forest-light">
+        <h3 className="font-display text-xl text-primary mb-2 transition-colors-smooth group-hover:text-primary/80">
           {title}
         </h3>
         

@@ -4,76 +4,8 @@ import PageHeader from "@/components/PageHeader";
 import BotanicalDivider from "@/components/BotanicalDivider";
 import FloralAccent from "@/components/FloralAccent";
 import { motion } from "framer-motion";
-import { Trophy, Users, Code, Heart, ExternalLink } from "lucide-react";
-
-const involvements = [
-  {
-    category: "Leadership",
-    items: [
-      {
-        title: "President",
-        organization: "Women in Computer Science",
-        period: "2023 - Present",
-        description: "Leading a 200+ member organization focused on supporting women and non-binary students in tech. Organizing workshops, mentorship programs, and industry panels.",
-        icon: Users,
-        link: "https://example.com",
-      },
-      {
-        title: "Technical Lead",
-        organization: "Codebase",
-        period: "2022 - 2023",
-        description: "Managed a team of 8 developers building pro-bono software for local nonprofits. Delivered 3 projects helping organizations digitize operations.",
-        icon: Code,
-      },
-    ],
-  },
-  {
-    category: "Hackathons",
-    items: [
-      {
-        title: "1st Place Winner",
-        organization: "TreeHacks 2024",
-        period: "February 2024",
-        description: "Built an AI-powered accessibility tool that generates alt-text for images in real-time. Won first place among 200+ teams.",
-        icon: Trophy,
-        highlight: true,
-      },
-      {
-        title: "Best Design Award",
-        organization: "CalHacks 9.0",
-        period: "October 2023",
-        description: "Created a mental health journaling app with mood tracking and AI-generated prompts. Recognized for exceptional UI/UX design.",
-        icon: Trophy,
-      },
-      {
-        title: "Finalist",
-        organization: "HackMIT",
-        period: "September 2023",
-        description: "Developed a platform connecting food-insecure students with campus meal sharing programs. Top 10 out of 300+ submissions.",
-        icon: Trophy,
-      },
-    ],
-  },
-  {
-    category: "Community",
-    items: [
-      {
-        title: "Mentor",
-        organization: "Code Nation",
-        period: "2022 - Present",
-        description: "Teaching web development to high school students from underserved communities. Weekly sessions covering HTML, CSS, JavaScript, and React.",
-        icon: Heart,
-      },
-      {
-        title: "Workshop Organizer",
-        organization: "Design@Berkeley",
-        period: "2023 - Present",
-        description: "Planning and hosting design workshops on topics like design systems, accessibility, and prototyping tools.",
-        icon: Users,
-      },
-    ],
-  },
-];
+import { ExternalLink } from "lucide-react";
+import { involvements } from "@/data/extracurriculars";
 
 const ExtracurricularsPage = () => {
   return (
@@ -81,7 +13,7 @@ const ExtracurricularsPage = () => {
       <Navigation />
       <main className="relative overflow-hidden">
         <FloralAccent position="top-right" size="lg" />
-        
+
         <div className="container mx-auto px-6">
           <PageHeader
             label="Involvement"
@@ -89,7 +21,7 @@ const ExtracurricularsPage = () => {
             description="The communities, competitions, and causes that fuel my growth and give back to others."
           />
 
-          <div className="max-w-5xl mx-auto pb-12 space-y-16">
+          <div className="max-w-5xl mx-auto pb-16 space-y-20">
             {involvements.map((section, sectionIndex) => (
               <motion.div
                 key={section.category}
@@ -99,15 +31,42 @@ const ExtracurricularsPage = () => {
                 transition={{ duration: 0.5, delay: sectionIndex * 0.1 }}
               >
                 <h2 className="font-display text-2xl font-semibold text-primary mb-6 flex items-center gap-3">
-                  <svg width="32" height="16" viewBox="0 0 32 16" className="text-sage">
-                    <ellipse cx="8" cy="8" rx="6" ry="4" fill="currentColor" opacity="0.4" transform="rotate(-20 8 8)" />
-                    <ellipse cx="20" cy="8" rx="5" ry="3" fill="currentColor" opacity="0.3" transform="rotate(15 20 8)" />
-                    <circle cx="28" cy="8" r="2" className="fill-gold" opacity="0.5" />
+                  <svg
+                    width="32"
+                    height="16"
+                    viewBox="0 0 32 16"
+                    className="text-muted-foreground/30"
+                  >
+                    <ellipse
+                      cx="8"
+                      cy="8"
+                      rx="6"
+                      ry="4"
+                      fill="currentColor"
+                      opacity="0.4"
+                      transform="rotate(-20 8 8)"
+                    />
+                    <ellipse
+                      cx="20"
+                      cy="8"
+                      rx="5"
+                      ry="3"
+                      fill="currentColor"
+                      opacity="0.3"
+                      transform="rotate(15 20 8)"
+                    />
+                    <circle
+                      cx="28"
+                      cy="8"
+                      r="2"
+                      className="fill-gold"
+                      opacity="0.5"
+                    />
                   </svg>
                   {section.category}
                 </h2>
 
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="grid md:grid-cols-2 gap-8">
                   {section.items.map((item, index) => (
                     <motion.div
                       key={item.title + item.organization}
@@ -115,17 +74,24 @@ const ExtracurricularsPage = () => {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.4, delay: index * 0.1 }}
-                      className={`group bg-card rounded-2xl p-6 border hover-lift ${
+                      className={`group bg-card rounded-lg p-8 border hover-lift ${
                         item.highlight
                           ? "border-accent/50 bg-gradient-to-br from-card to-gold-muted/10"
                           : "border-border/50"
                       }`}
                     >
                       <div className="flex items-start gap-4">
-                        <div className={`p-3 rounded-full ${
-                          item.highlight ? "bg-accent text-accent-foreground" : "bg-sage-light"
-                        }`}>
-                          <item.icon size={20} className={item.highlight ? "" : "text-forest"} />
+                        <div
+                          className={`p-3 rounded-full ${
+                            item.highlight
+                              ? "bg-accent text-accent-foreground"
+                              : "bg-sage-light"
+                          }`}
+                        >
+                          <item.icon
+                            size={20}
+                            className={item.highlight ? "" : "text-foreground"}
+                          />
                         </div>
                         <div className="flex-1">
                           <div className="flex items-start justify-between gap-2 mb-1">
@@ -144,7 +110,7 @@ const ExtracurricularsPage = () => {
                               </a>
                             )}
                           </div>
-                          <p className="text-forest-light font-medium text-sm mb-1">
+                          <p className="text-muted-foreground font-medium text-sm mb-1">
                             {item.organization}
                           </p>
                           <p className="text-xs text-muted-foreground mb-3">
