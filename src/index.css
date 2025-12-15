@@ -12,43 +12,26 @@
 
 @layer base {
   :root {
-    /* Soft cream background */
     --background: 40 30% 96%;
     --foreground: 150 25% 15%;
-
-    /* Cards - slightly warmer */
     --card: 40 25% 98%;
     --card-foreground: 150 25% 15%;
-
     --popover: 40 25% 98%;
     --popover-foreground: 150 25% 15%;
-
-    /* Dark forest green primary */
     --primary: 150 35% 22%;
     --primary-foreground: 40 30% 96%;
-
-    /* Warm cream secondary */
     --secondary: 40 20% 92%;
     --secondary-foreground: 150 25% 18%;
-
-    /* Muted sage */
     --muted: 150 15% 90%;
     --muted-foreground: 150 15% 40%;
-
-    /* Golden yellow accent */
     --accent: 43 85% 55%;
     --accent-foreground: 150 30% 12%;
-
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
-
     --border: 150 15% 85%;
     --input: 150 15% 85%;
     --ring: 150 35% 22%;
-
     --radius: 0.75rem;
-
-    /* Custom colors */
     --forest: 150 35% 22%;
     --forest-light: 150 25% 32%;
     --forest-dark: 150 40% 12%;
@@ -61,23 +44,10 @@
     --sage-light: 150 15% 88%;
     --warm-white: 40 40% 98%;
     --blush: 15 60% 92%;
-
-    /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(40 30% 96%) 0%, hsl(150 15% 92%) 100%);
-    --gradient-card: linear-gradient(180deg, hsl(40 25% 98%) 0%, hsl(40 20% 95%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(43 85% 55%) 0%, hsl(43 85% 65%) 100%);
-    --gradient-warm: linear-gradient(180deg, hsl(40 40% 98%) 0%, hsl(40 30% 96%) 100%);
-
-    /* Shadows */
-    --shadow-soft: 0 4px 20px -4px hsl(150 20% 20% / 0.08);
-    --shadow-card: 0 8px 30px -8px hsl(150 20% 20% / 0.1);
-    --shadow-glow: 0 0 40px hsl(43 85% 55% / 0.15);
-    --shadow-warm: 0 4px 24px -6px hsl(40 30% 30% / 0.1);
-
-    /* Transitions */
-    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-
+    --shadow-soft: 0 4px 20px -4px rgba(30, 50, 40, 0.08);
+    --shadow-card: 0 8px 30px -8px rgba(30, 50, 40, 0.1);
+    --shadow-glow: 0 0 40px rgba(212, 175, 55, 0.15);
+    --shadow-warm: 0 4px 24px -6px rgba(80, 70, 50, 0.1);
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
@@ -91,32 +61,23 @@
   .dark {
     --background: 150 30% 8%;
     --foreground: 40 20% 92%;
-
     --card: 150 25% 12%;
     --card-foreground: 40 20% 92%;
-
     --popover: 150 25% 12%;
     --popover-foreground: 40 20% 92%;
-
     --primary: 43 85% 55%;
     --primary-foreground: 150 30% 8%;
-
     --secondary: 150 20% 18%;
     --secondary-foreground: 40 20% 92%;
-
     --muted: 150 15% 20%;
     --muted-foreground: 40 15% 65%;
-
     --accent: 43 85% 55%;
     --accent-foreground: 150 30% 8%;
-
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 100%;
-
     --border: 150 20% 20%;
     --input: 150 20% 20%;
     --ring: 43 85% 55%;
-
     --sidebar-background: 150 30% 8%;
     --sidebar-foreground: 40 20% 92%;
     --sidebar-primary: 43 85% 55%;
@@ -149,7 +110,7 @@
 @layer components {
   .text-gradient {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, hsl(var(--forest)) 0%, hsl(var(--forest-light)) 100%);
+    background-image: linear-gradient(135deg, #2d4a3e 0%, #3d6352 100%);
   }
 
   .blob-shape {
@@ -172,13 +133,16 @@
     border-radius: 5% 95% 10% 90% / 50% 50% 50% 50%;
   }
 
-  /* Warm section backgrounds */
   .bg-warm {
-    background: linear-gradient(180deg, hsl(var(--warm-white)) 0%, hsl(var(--cream)) 100%);
+    background: linear-gradient(180deg, #fcfaf7 0%, #f7f4ef 100%);
   }
 
   .bg-cozy {
-    background: linear-gradient(135deg, hsl(var(--cream)) 0%, hsl(var(--sage-light) / 0.3) 50%, hsl(var(--cream)) 100%);
+    background: linear-gradient(135deg, #f7f4ef 0%, rgba(200, 215, 205, 0.3) 50%, #f7f4ef 100%);
+  }
+
+  .shadow-soft {
+    box-shadow: 0 4px 20px -4px rgba(30, 50, 40, 0.08);
   }
 }
 
@@ -189,7 +153,7 @@
 
   .hover-lift:hover {
     transform: translateY(-4px);
-    box-shadow: var(--shadow-card);
+    box-shadow: 0 8px 30px -8px rgba(30, 50, 40, 0.1);
   }
 
   .underline-hover {
