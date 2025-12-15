@@ -24,12 +24,12 @@ const Navigation = () => {
         </Link>
 
         {/* Desktop Navigation */}
-        <ul className="hidden lg:flex items-center gap-6">
+        <ul className="hidden lg:flex items-center gap-8">
           {navLinks.map((link) => (
             <li key={link.href}>
               <Link
                 to={link.href}
-                className={`text-sm font-medium transition-colors duration-300 underline-hover ${
+                className={`text-sm font-medium transition-colors-smooth underline-hover ${
                   location.pathname === link.href
                     ? "text-primary"
                     : "text-muted-foreground hover:text-primary"
@@ -42,7 +42,7 @@ const Navigation = () => {
           <li>
             <Link
               to="/contact"
-              className="px-5 py-2 text-sm font-medium bg-primary text-primary-foreground rounded-full hover:bg-forest-light transition-colors duration-300"
+              className="px-5 py-2.5 text-sm font-medium bg-primary text-primary-foreground rounded-full transition-colors-smooth btn-press hover:bg-forest-light"
             >
               Say Hello
             </Link>

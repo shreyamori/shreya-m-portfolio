@@ -18,31 +18,30 @@ const HeroSection = () => {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="order-2 lg:order-1"
           >
-            <p className="text-accent font-medium mb-4 tracking-wide">Hello, I'm</p>
-            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-semibold text-primary mb-6 leading-tight">
+            <p className="text-accent font-medium mb-4 tracking-widest text-sm uppercase">Hello, I'm</p>
+            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl text-primary mb-6 leading-[1.1]">
               Sarah<br />
               <span className="text-forest-light">Rodriguez</span>
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-md mb-8 leading-relaxed">
+            <p className="text-lg md:text-xl text-muted-foreground max-w-md mb-8 leading-relaxed font-light">
               Computer Science student crafting thoughtful digital experiences. 
               Passionate about design systems, accessibility, and the spaces where 
               technology meets human creativity.
             </p>
 
-            {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4 mb-10">
               <Link
                 to="/projects"
-                className="px-8 py-3 bg-primary text-primary-foreground rounded-full font-medium hover:bg-forest-light transition-all duration-300 hover:shadow-lg"
+                className="px-8 py-3.5 bg-primary text-primary-foreground rounded-full font-medium transition-all duration-300 ease-out btn-press hover:bg-forest-light hover:shadow-lg"
               >
                 View My Work
               </Link>
               <Link
                 to="/experience"
-                className="px-8 py-3 border-2 border-primary text-primary rounded-full font-medium hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                className="px-8 py-3.5 border-2 border-primary text-primary rounded-full font-medium transition-all duration-300 ease-out btn-press hover:bg-primary hover:text-primary-foreground"
               >
                 My Experience
               </Link>
