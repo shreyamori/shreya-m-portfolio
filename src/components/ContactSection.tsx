@@ -36,12 +36,15 @@ const ContactSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-accent font-medium tracking-wide text-sm uppercase">Get in Touch</span>
+          <span className="text-accent font-medium tracking-wide text-sm uppercase">
+            Get in Touch
+          </span>
           <h2 className="font-display text-4xl md:text-5xl font-semibold text-primary mt-3 mb-4">
             Let's Create Together
           </h2>
           <p className="text-muted-foreground max-w-lg mx-auto">
-            Have a project in mind or just want to say hello? I'd love to hear from you.
+            Have a project in mind or just want to say hello? I'd love to hear
+            from you.
           </p>
         </motion.div>
 
@@ -57,7 +60,7 @@ const ContactSection = () => {
               <h3 className="font-display text-2xl font-semibold text-primary mb-6">
                 Contact Information
               </h3>
-              
+
               <div className="space-y-6 mb-8">
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-sage-light rounded-full">
@@ -65,18 +68,23 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground mb-1">Email</p>
-                    <a href="mailto:hello@sarahrodriguez.dev" className="text-foreground hover:text-accent transition-colors">
-                      hello@sarahrodriguez.dev
+                    <a
+                      href="mailto:shreya.morishetty@gmail.com"
+                      className="text-foreground hover:text-accent transition-colors"
+                    >
+                      shreya.morishetty@gmail.com
                     </a>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-sage-light rounded-full">
                     <MapPin size={20} className="text-forest" />
                   </div>
                   <div>
-                    <p className="text-sm text-muted-foreground mb-1">Location</p>
+                    <p className="text-sm text-muted-foreground mb-1">
+                      Location
+                    </p>
                     <p className="text-foreground">San Francisco, CA</p>
                   </div>
                 </div>
@@ -109,53 +117,71 @@ const ContactSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <form onSubmit={handleSubmit} className="bg-card rounded-2xl p-8 border border-border/50">
+            <form
+              onSubmit={handleSubmit}
+              className="bg-card rounded-2xl p-8 border border-border/50"
+            >
               <div className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
+                  <label
+                    htmlFor="name"
+                    className="block text-sm font-medium text-foreground mb-2"
+                  >
                     Your Name
                   </label>
                   <input
                     type="text"
                     id="name"
                     value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, name: e.target.value })
+                    }
                     required
                     className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all text-foreground placeholder:text-muted-foreground"
                     placeholder="Jane Doe"
                   />
                 </div>
-                
+
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium text-foreground mb-2"
+                  >
                     Your Email
                   </label>
                   <input
                     type="email"
                     id="email"
                     value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, email: e.target.value })
+                    }
                     required
                     className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all text-foreground placeholder:text-muted-foreground"
                     placeholder="jane@example.com"
                   />
                 </div>
-                
+
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
+                  <label
+                    htmlFor="message"
+                    className="block text-sm font-medium text-foreground mb-2"
+                  >
                     Message
                   </label>
                   <textarea
                     id="message"
                     value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, message: e.target.value })
+                    }
                     required
                     rows={5}
                     className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all resize-none text-foreground placeholder:text-muted-foreground"
                     placeholder="Tell me about your project or just say hi..."
                   />
                 </div>
-                
+
                 <button
                   type="submit"
                   className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-forest-light transition-all duration-300 hover:shadow-lg"
